@@ -1,0 +1,250 @@
+\documentclass[11pt,a4paper,pdftex]{amsart}
+\usepackage[psamsfonts]{amssymb}
+%\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,latexsym}
+\usepackage[dvips]{graphicx}
+\usepackage{t1enc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amscd}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{coro}[teo]{Corolario}
+\newtheorem{lema}{Lema}[section]
+\newtheorem{definition}{Definición}[section]
+\newtheorem{conc}{Conclusión}[section]
+\newtheorem{prop}{Proposición}[section]
+\newtheorem{obs}{Observación}[section]
+\newtheorem{ax}{Axioma}[section]
+\newtheorem{ej}{Ejercicio}
+
+\newcommand{\bej}[1]{\begin{ej}\rm{#1}}
+\newcommand{\eej}{\end{ej}\vspace{-0.2cm}}
+%---------------------------------------
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\bq}{\begin{quotation}}
+\newcommand{\eq}{\end{quotation}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdefi}{\begin{definition}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mb}[1]{\;\mbox{#1}\;}
+\newcommand{\su}[1]{\underline{#1}}
+\newcommand{\so}[1]{\overline{#1}}
+\newcommand{\ang}[1]{\widehat{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\cc}{QQ\;}
+\renewcommand{\bf}{\textbf}
+\newcommand{\comb}[2]{\left(\!\!\!\ba{c}#1\\[1ex]#2 \ea
+\!\!\!\right)}
+%-----------------------------------------
+%conjuntos
+\newcommand{\W}{\mathbb W}
+\newcommand{\K}{\mathbb K}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{\mathcal C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\F}{\mathbb F}
+\newcommand{\A}{\mathbb A}
+\newcommand{\V}{\mathbb V}
+\newcommand{\I}{\mathbb I}
+\newcommand{\0}{\mathbb O}
+\newcommand{\Su}{\mathcal{S}}
+%------------------------------------------
+%operaciones
+\newcommand{\8}{\infty}
+\newcommand{\ie}{\langle}
+\newcommand{\de}{\rangle}
+\newcommand{\pe}[2]{\ie {#1} \, ; \, {#2} \de }
+\newcommand{\f}[1]{\overrightarrow{#1}}
+\newcommand{\DT}[2]{\frac{d{#1}}{d{#2}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dg}{\Delta}
+\newcommand{\g}{\nabla}
+\newcommand{\D}{\mbox{div}}
+\newcommand{\Dp}[1]{\partial_{#1}}
+\newcommand{\DP}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\sen}[1]{\mbox{sen}\;{#1}}
+\newcommand{\Lp}[1]{L^{#1}}
+\newcommand{\To}{\longrightarrow}
+%-------------------------------------
+%griegos
+\newcommand{\vi}{\varphi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\ve}{\varepsilon}
+%-------------------------
+%comandos particulares
+\newcommand{\id}[1]{\text{id}_{#1}}
+\newcommand{\mD}{\mc{D}}
+\newcommand{\mC}{\mc{S}}
+\newcommand{\mS}{\mc{SS}}
+\newcommand{\mH}{\mc{H}}
+\newcommand{\HD}{\mc{H}_\mD}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Un comando para insertar dibujos
+\newcommand{\putfig}[4]{\bigskip \bigskip
+             \begin{figure}[ht]
+             \epsfxsize=#1cm\hfil{\epsfbox{#2}}
+             \caption{#3}
+         \label{#4}
+             \end{figure}\bigskip}
+%La sintaxis
+%\putfig{ancho}{.eps}{titulo}{label}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Un comando para insertar dos dibujos
+\newcommand{\putfigg}[4]{\bigskip \bigskip
+             \begin{figure}[ht]
+             \epsfxsize=5cm\hfil{\epsfbox{#1}}
+             \epsfxsize=5cm\hfil{\epsfbox{#2}}
+             \caption{#3}
+         \label{#4}
+             \end{figure}\bigskip}
+%La sintaxis
+%\putfigg{.eps}{.eps}{titulo1}{label1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%un dibujo en jpg
+\newcommand{\putjpg}[3]{\bigskip
+\begin{center}
+ \begin{figure}[ht]
+  \hspace{5cm}\includegraphics[scale=1.7]{#1.jpg}
+  \caption{#2}
+  \label{#3}
+  \bigskip
+  \bigskip
+ \end{figure}
+\end{center}
+}
+%la sintaxis \putjpg{.jpg}{Titulo}{label}
+%----------------------------------------------------
+%diseÃ±oo de la pÃ¡gina
+
+\vfuzz7pt % Don't report over-full v-boxes if over-edge is 7pt small
+\hfuzz7pt % Don't report over-full h-boxes if over-edge is 7pt small
+
+\pagestyle{myheadings}
+
+\renewcommand{\labelenumi}{({\it \alph{enumi}})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+
+\flushbottom \textwidth17cm \textheight23cm \hoffset=-2cm
+\voffset=-0.5cm
+
+\begin{document}
+
+
+%\markboth{}{\hfil {\sc An\'alisis II--An\'alisis matem\'atico II--Matem\'atica 3. 1er. Cuatrimestre 2008}}
+
+\begin{center}
+
+\bf{\Large An\'alisis II -- An\'alisis matem\'atico II -- Matem\'atica 3.} \\
+\bigskip
+\bf{\large Segundo Cuatrimestre de 2025}\\
+\bigskip
+\bf{Machete}
+\end{center}
+
+
+\bigskip\bigskip
+
+\section{Práctica 1}
+
+\noindent\textbf{Definici\'on 1.}  
+Una \textbf{curva} $\C \subset \mathbb{R}^n$ es un conjunto de puntos en el espacio que puede describirse mediante un par\'ametro que var\'ia de forma continua en un intervalo de la recta real. M\'as precisamente, $\C$ es una curva si existen funciones continuas $x_1(t), x_2(t), \ldots, x_n(t)$ definidas en alg\'un intervalo $[a, b]$, tales que un punto $\mathbf{y} = (y_1, \ldots, y_n) \in \C$ si y solo si existe $t \in [a, b]$ tal que:  
+\[
+(y_1, \ldots, y_n) = \big(x_1(t), \ldots, x_n(t)\big).
+\]  
+
+Llamemos $\sigma : [a, b] \to \mathbb{R}^n$ a la funci\'on  
+\[
+\sigma(t) = \big(x_1(t), x_2(t), \ldots, x_n(t)\big).
+\]  
+Entonces, $\C$ es la imagen de $[a, b]$ bajo $\sigma$, y a $\sigma$ se le llama una \textbf{parametrizaci\'on} de $\C$.  
+
+\bigskip
+
+\noindent\textbf{Definici\'on 2.}  
+Una curva $\C$ se dice \textbf{abierta y simple} si admite una parametrizaci\'on inyectiva.  
+
+Una curva $\C$ se dice \textbf{cerrada y simple} si existe una parametrizaci\'on $\sigma : [a, b] \to \mathbb{R}^n$ tal que:  
+\begin{itemize}
+    \item $\sigma$ es inyectiva en $[a, b)$, es decir, $\sigma(t_1) \neq \sigma(t_2)$ para todo $t_1, t_2 \in [a, b)$ con $t_1 \neq t_2$.
+    \item $\sigma$ es continua en $[a, b]$.
+    \item $\sigma(a) = \sigma(b)$, es decir, el punto inicial coincide con el punto final.
+    \item La imagen de $\sigma$, definida como $\{\sigma(t) : t \in [a, b]\}$, es exactamente $\C$.
+\end{itemize}
+Geom\'etricamente, esto significa que la curva no se cruza a s\'i misma (excepto en el punto inicial y final, que coinciden), y su trayectoria forma un lazo cerrado.
+
+\bigskip
+
+\noindent\textbf{Definici\'on 3.}  
+Si $\C$ es una curva cerrada, simple y suave, una parametrizaci\'on $\sigma : [a, b] \to \mathbb{R}^n$ se dice \textbf{regular} si cumple:  
+\begin{itemize}
+    \item $\sigma$ es inyectiva en $[a, b)$.
+    \item La imagen de $\sigma$ es $\C$.
+    \item $\sigma \in C^1([a, b])$, es decir, $\sigma$ es continuamente diferenciable en $[a, b]$.
+    \item $\sigma(a) = \sigma(b)$.
+    \item $\sigma'(a) = \sigma'(b)$.
+    \item $\sigma'(t) \neq \mathbf{0}$ para todo $t \in [a, b]$.
+\end{itemize}
+
+
+
+\section{Práctica 2}
+
+
+\begin{definition} Una superficie paramétrica (superficie a secas para nosotros) es un conjunto de puntos del espacio que puede describirse por medio de dos parámetros continuos. Más precisamente, $\Su \subseteq \mathbb{R}^3$ es una superficie si existen funciones continuas $x(u,v),\,y(u,v),\,z(u,v)$ definidas en un dominio elemental $D\subset\R^2$ tales que
+ $(x,y,z)\in\Su$ si y sólo si existe $(u,v)\in D$ con $x=x(u,v)$, $y=y(u,v)$, $z=z(u,v)$.
+
+ En este caso, llamamos a $T:D\to\R^3$ dada por $T(u,v)=\big(x(u,v),y(u,v),z(u,v)\big)$ una parametrización de $\Su$.
+
+ Con el fin de que $T$ no describa una porción de la superficie $\Su$ más de una vez, sólo admitiremos parametrizaciones que
+ Sean inyectivas salvo a lo sumo en un número finito de curvas suaves del dominio de los parámetros.
+\end{definition}
+
+\begin{prop} Sea $\Su$ una superficie. Si existe una parametrización $T:D\subset\R^2\to\R^3$ inyectiva, diferenciable en $(u_0,v_0)\in D$ tal que los vectores derivados $T_u(u_0,v_0)$, $T_v(u_0,v_0)$ no son paralelos y son no nulos, el plano $\Pi_0$ por $P_0=T(u_0,v_0)$ que determinan estos dos vectores derivados es tangente a $\Su$ en $P_0$.
+\end{prop}
+
+\begin{prop} \label{suave} Si $\Su$ es una superficie que tiene una parametrización $T:D\subset\R^2\to\R^3$ inyectiva,
+  $C^1$, con $T_u\times T_v\neq0$ para todo $(u,v)\in D$, se tiene que $\Su$ es suave. A una parametrización $T$ que verifique estas propiedades la llamamos ``regular''.
+\end{prop}
+
+
+
+
+\section{Práctica 3}
+
+
+\noindent\textbf{Definici\'on 1.} Una \textbf{región} \( D \) se dice que es de tipo 3 si puede ser descrita tanto como una región de tipo 1 como de tipo 2. Es decir, \( D \) puede ser descrita como:
+
+\[
+D = \{(x, y) \mid a \leq x \leq b, \phi_1(x) \leq y \leq \phi_2(x)\}
+\]
+y también como:
+\[
+D = \{(x, y) \mid c \leq y \leq d, \psi_1(y) \leq x \leq \psi_2(y)\}.
+\]
+\bigskip 
+
+\noindent\textbf{Teorema 2.}
+Sea $\mathbf{F} = (P,Q)$ un campo vectorial de clase $C^1$ definido en un abierto $\Omega$ de $\mathbb{R}^2$ y sea $C$ una curva en el plano, cerrada, simple, orientada positivamente y diferenciable por trozos, que encierra una región $D$ de tipo III que queda contenida en $\Omega$. Entonces,
+\begin{equation}
+    \oint_{C_+} (P \,dx + Q \,dy) = \iint_D \left( \frac{\partial Q}{\partial x}(x,y) - \frac{\partial P}{\partial y}(x,y) \right) dx \, dy.
+\end{equation}
+
+
+
+
+\end{document}

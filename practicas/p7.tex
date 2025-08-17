@@ -1,0 +1,248 @@
+\documentclass[11pt,a4paper,pdftex]{amsart}
+
+\usepackage[psamsfonts]{amssymb}
+%\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,latexsym}
+\usepackage{graphicx}
+\usepackage{t1enc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[english]{babel}
+\usepackage{epsfig}
+\usepackage{amscd}
+\usepackage{verbatim}
+\usepackage[active]{srcltx}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+%\usepackage[english]{babel}
+\usepackage{multicol}
+
+
+\newtheorem{teo}{Teorema}[section]%establece un contador para
+%el entorno 'teo' que aparecerá con el nombre 'Teorema' y que
+%volverá a empezar cuando cambien de 'chapter'.
+
+\newtheorem{coro}[teo]{Corolario}%vincula las numeraciones de 'coro'
+%con las de 'teo'.
+
+\newtheorem{lema}{Lema}[section]
+%\newtheorem{lema}[lema]{Lema}
+
+
+\newtheorem{definition}{Definici\'on}[section]
+
+\newtheorem{conc}{Conclusión}[section]
+
+\newtheorem{prop}{Proposición}[section]
+%\newtheorem{prop}[prop]{Propiedad}
+
+\newtheorem{obs}{Observación}[section]
+
+\renewcommand{\thesection}{{}}
+
+%\newtheorem{obs}{Observación} %numera las 'Observaciones' de corrido
+%sin volver a resetear.
+
+\newtheorem{ax}{Axioma}[section]
+
+%\newtheorem{defini}{Definición}[section]
+
+\newtheorem{ej}{Ejercicio}%[section] %numera os 'Ejercicios' reseteando
+%en cada 'capítulo'.
+
+
+%\numberwithin{equation}{section}%numera las formulas reseteando
+%cada vez que cambia de 'capítulo'.
+
+% proof
+%\newenvironment{proof}
+% {\medskip\noindent {\sc Demostración}.-- \ }
+% {\hfill\vbox{\hrule height 5pt width 5pt } \bigskip}
+
+%\newcommand{\cqfd}{\hfill\vbox{\hrule height 5pt width 5pt }\bigskip}
+
+
+\newcommand{\bl}{\begin{lema}}
+\newcommand{\el}{\end{lema}}
+\newcommand{\bcon}{\begin{conc}}
+\newcommand{\econ}{\end{conc}}
+\newcommand{\bteo}{\begin{teo}}
+\newcommand{\eteo}{\end{teo}}
+\newcommand{\bp}{\begin{prop}}
+%\newcommand{\ep}{\end{prop}}
+\newcommand{\bo}{\begin{obs}}
+\newcommand{\eo}{\end{obs}}
+\newcommand{\bco}{\begin{coro}}
+\newcommand{\eco}{\end{coro}}
+\newcommand{\bpf}{\begin{proof}}
+\newcommand{\epf}{\end{proof}}
+\newcommand{\bax}{\begin{ax}}
+\newcommand{\eax}{\end{ax}}
+\newcommand{\bdefi}{\begin{defini}}
+\newcommand{\edefi}{\end{defini}}
+\newcommand{\bej}[1]{\begin{ej}\rm{#1}}
+\newcommand{\eej}{\end{ej}\vspace{-0.2cm}}
+
+%---------------------------------------
+
+%comandos
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\bq}{\begin{quotation}}
+\newcommand{\eq}{\end{quotation}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mb}[1]{\;\mbox{#1}\;}
+\newcommand{\su}[1]{\underline{#1}}
+\newcommand{\so}[1]{\overline{#1}}
+\newcommand{\ang}[1]{\widehat{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\cc}{QQ\;}
+\renewcommand{\bf}{\textbf}
+\newcommand{\comb}[2]{\left(\!\!\!\ba{c}#1\\[1ex]#2 \ea
+\!\!\!\right)}
+%-----------------------------------------
+
+%conjuntos
+\newcommand{\W}{\mathbb W}
+\newcommand{\K}{\mathbb K}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{{\mathcal C}}
+\newcommand{\Su}{{\mathcal S}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\F}{\mathbb F}
+\newcommand{\A}{\mathbb A}
+\newcommand{\V}{\mathbb V}
+\newcommand{\I}{\mathbb I}
+\newcommand{\0}{\mathbb O}
+\newcommand{\ii}{í}
+\newcommand{\flecha}{\to}
+
+%------------------------------------------
+%operaciones
+\newcommand{\8}{\infty}
+\newcommand{\ie}{\langle}
+\newcommand{\de}{\rangle}
+\newcommand{\pe}[2]{\ie {#1} \, ; \, {#2} \de }
+\newcommand{\f}[1]{\overrightarrow{#1}}
+\newcommand{\DT}[2]{\frac{d{#1}}{d{#2}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dg}{\Delta}
+\newcommand{\g}{\nabla}
+\newcommand{\D}{\mbox{div}}
+\newcommand{\Dp}[1]{\partial_{#1}}
+\newcommand{\DP}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\sen}[1]{\mbox{sen}\;{#1}}
+\newcommand{\Lp}[1]{L^{#1}}
+\newcommand{\To}{\longrightarrow}
+%-------------------------------------
+%griegos
+\newcommand{\vi}{\varphi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\di}{\displaystyle}
+\newcommand{\erre}{\R}
+
+
+%-------------------------
+
+%comandos particulares
+
+\newcommand{\id}[1]{\text{id}_{#1}}
+\newcommand{\mD}{\mc{D}}
+\newcommand{\mC}{\mc{S}}
+\newcommand{\mS}{\mc{SS}}
+\newcommand{\mH}{\mc{H}}
+\newcommand{\HD}{\mc{H}_\mD}
+
+\newcommand{\ep}{\varepsilon}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Un comando para insertar dibujos
+\newcommand{\putfig}[4]{\bigskip \bigskip
+             \begin{figure}[ht]
+             \epsfxsize=#1cm\hfil{\epsfbox{#2}}
+             \caption{#3}
+         \label{#4}
+             \end{figure}\bigskip}
+
+%La sintaxis
+%\putfig{ancho}{.eps}{titulo}{label}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Un comando para insertar dos dibujos
+\newcommand{\putfigg}[4]{\bigskip \bigskip
+             \begin{figure}[ht]
+             \epsfxsize=5cm\hfil{\epsfbox{#1}}
+             \epsfxsize=5cm\hfil{\epsfbox{#2}}
+             \caption{#3}
+         \label{#4}
+             \end{figure}\bigskip}
+%La sintaxis
+%\putfigg{.eps}{.eps}{titulo1}{label1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%un dibujo en jpg
+
+\newcommand{\putjpg}[3]{\bigskip
+\begin{center}
+ \begin{figure}[ht]
+  \hspace{5cm}\includegraphics[scale=1.7]{#1.jpg}
+  \caption{#2}
+  \label{#3}
+  \bigskip
+  \bigskip
+ \end{figure}
+\end{center}
+}
+
+%la sintaxis \putjpg{.jpg}{Titulo}{label}
+
+
+%----------------------------------------------------
+%diseño de la página
+
+\vfuzz7pt % Don't report over-full v-boxes if over-edge is 7pt small
+\hfuzz7pt % Don't report over-full h-boxes if over-edge is 7pt small
+
+\pagestyle{myheadings}
+%\pagestyle{empty}: elimina números de página y encabezados
+
+\flushbottom \textwidth17cm \textheight23cm \hoffset=-2cm
+\voffset=-0.5cm
+
+
+\begin{document}
+
+
+
+%\markboth{}{\hfil {\sc An\'alisis II--An\'alisis matem\'atico II--Matem\'atica 3. 1er. Cuatrimestre 2008}}
+
+\begin{center}
+\bf{\Large An\'alisis II -- An\'alisis matem\'atico II -- Matem\'atica 3.} \\
+\bigskip
+\bf{\large Segundo Cuatrimestre de 2025}\\
+\bigskip
+\bf{Pr\'actica 7 - Diagramas de fase.}
+\end{center}
+
+\bigskip\bigskip
+
+\setcounter{equation}{0}
+
+
+%
+
+\end{document}

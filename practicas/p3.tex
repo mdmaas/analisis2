@@ -1,0 +1,327 @@
+\documentclass[11pt,a4paper,pdftex]{amsart}
+\usepackage[psamsfonts]{amssymb}
+%\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,latexsym}
+\usepackage{t1enc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amscd}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{ej}{Ejercicio}%[section] %numera os 'Ejercicios' reseteando
+%en cada 'capï¿½tulo'.
+
+
+\numberwithin{equation}{section}%numera las formulas reseteando
+%cada vez que cambia de 'capï¿½tulo'.
+
+\newcommand{\bej}[1]{\begin{ej}\rm{#1}}
+\newcommand{\eej}{\end{ej}\vspace{-0.2cm}}
+%---------------------------------------
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\bq}{\begin{quotation}}
+\newcommand{\eq}{\end{quotation}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mb}[1]{\;\mbox{#1}\;}
+\newcommand{\su}[1]{\underline{#1}}
+\newcommand{\so}[1]{\overline{#1}}
+\newcommand{\ang}[1]{\widehat{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\cc}{QQ\;}
+\renewcommand{\bf}{\textbf}
+\newcommand{\comb}[2]{\left(\!\!\!\ba{c}#1\\[1ex]#2 \ea
+\!\!\!\right)}
+%-----------------------------------------
+%conjuntos
+\newcommand{\W}{\mathbb W}
+\newcommand{\K}{\mathbb K}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{\mathcal C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\F}{\mathbb F}
+\newcommand{\A}{\mathbb A}
+\newcommand{\V}{\mathbb V}
+\newcommand{\I}{\mathbb I}
+\newcommand{\0}{\mathbb O}
+%------------------------------------------
+%operaciones
+\newcommand{\8}{\infty}
+\newcommand{\ie}{\langle}
+\newcommand{\de}{\rangle}
+\newcommand{\pe}[2]{\ie {#1} \, ; \, {#2} \de }
+\newcommand{\f}[1]{\overrightarrow{#1}}
+\newcommand{\DT}[2]{\frac{d{#1}}{d{#2}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dg}{\Delta}
+\newcommand{\g}{\nabla}
+\newcommand{\D}{\mbox{div}}
+\newcommand{\Dp}[1]{\partial_{#1}}
+\newcommand{\DP}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\sen}[1]{\mbox{sen}\;{#1}}
+\newcommand{\Lp}[1]{L^{#1}}
+\newcommand{\To}{\longrightarrow}
+%-------------------------------------
+%griegos
+\newcommand{\vi}{\varphi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\ve}{\varepsilon}
+%-------------------------
+%comandos particulares
+\newcommand{\id}[1]{\text{id}_{#1}}
+\newcommand{\mD}{\mc{D}}
+\newcommand{\mC}{\mc{S}}
+\newcommand{\mS}{\mc{SS}}
+\newcommand{\mH}{\mc{H}}
+\newcommand{\HD}{\mc{H}_\mD}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Un comando para insertar dibujos
+\newcommand{\putfig}[4]{\bigskip \bigskip
+             \begin{figure}[ht]
+             \epsfxsize=#1cm\hfil{\epsfbox{#2}}
+             \caption{#3}
+         \label{#4}
+             \end{figure}\bigskip}
+%La sintaxis
+%\putfig{ancho}{.eps}{titulo}{label}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Un comando para insertar dos dibujos
+\newcommand{\putfigg}[4]{\bigskip \bigskip
+             \begin{figure}[ht]
+             \epsfxsize=5cm\hfil{\epsfbox{#1}}
+             \epsfxsize=5cm\hfil{\epsfbox{#2}}
+             \caption{#3}
+         \label{#4}
+             \end{figure}\bigskip}
+%La sintaxis
+%\putfigg{.eps}{.eps}{titulo1}{label1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%un dibujo en jpg
+\newcommand{\putjpg}[3]{\bigskip
+\begin{center}
+ \begin{figure}[ht]
+  \hspace{5cm}\includegraphics[scale=1.7]{#1.jpg}
+  \caption{#2}
+  \label{#3}
+  \bigskip
+  \bigskip
+ \end{figure}
+\end{center}
+}
+%la sintaxis \putjpg{.jpg}{Titulo}{label}
+%----------------------------------------------------
+%diseÃ±oo de la pÃ¡gina
+
+\vfuzz7pt % Don't report over-full v-boxes if over-edge is 7pt small
+\hfuzz7pt % Don't report over-full h-boxes if over-edge is 7pt small
+
+\pagestyle{myheadings}
+
+\renewcommand{\labelenumi}{({\it \alph{enumi}})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+
+\flushbottom \textwidth17cm \textheight23cm \hoffset=-2cm
+\voffset=-0.5cm
+
+\begin{document}
+
+\begin{center}
+\bf{\Large An\'alisis II -- An\'alisis matem\'atico II -- Matem\'atica 3.} \\
+\bigskip
+\bf{\large Segundo Cuatrimestre de 2025}\\
+\bigskip
+\bf{Pr\'actica 3 - Teorema de Green.}
+\end{center}
+
+\bigskip\bigskip
+
+\setcounter{equation}{0}
+
+\bej
+Verificar el Teorema de Green para el disco $D$ con centro $(0,0)$ y
+radio $R$ y las siguientes funciones:
+\begin{enumerate}
+\item[a)]  $P(x,y)=xy^2,\quad Q(x,y)=-yx^2.$
+\item[b)]  $P(x,y)=2y,\quad Q(x,y)=x.$
+\end{enumerate}
+\eej
+
+\bej
+Verificar el Teorema de Green y calcular
+$$\int_\C y^2\,dx+x\,dy,$$
+siendo $\C$ la curva recorrida en sentido positivo:
+\begin{enumerate}
+\item[a)]  Cuadrado con vértices $(0,0),\,(2,0),\,(2,2),\,(0,2).$
+\item[b)]  Elipse dada por $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1.$
+\item[c)]   $\C=\C_1\cup \C_2$, donde $\C_1:\,y=x,\;x\in [0,1]$ y $\C_2:\,y=x^2,\;x\in [0,1].$
+\end{enumerate}
+\eej
+
+\bej
+Usando el teorema de Green, hallar el área de:
+\begin{enumerate}
+\item[a)]  El disco $D$ con centro $(0,0)$ y radio $R$.
+\item[b)]  La región dentro de la elipse $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1.$
+\end{enumerate}
+\eej
+
+\bej
+Sea \(D\) la región encerrada por el eje \(x\) y el arco de cicloide:
+\[
+x=\theta -\sin \theta,\quad y=1-\cos \theta,\quad 0\le \theta \le 2\pi.
+\]
+Usando el teorema de Green, calcular el área de \(D\).
+\eej
+
+\bej
+Hallar el área entre las curvas dadas en coordenadas polares por
+\[
+\begin{array}{cc}
+ r=1+\cos\theta & \textrm{ con } -\pi\le \theta\le \pi,\\ 
+ r=\sqrt{\cos^2{\theta}-\sin^2{\theta}} & \text{ con } -\displaystyle \frac{\pi} {4} \le \theta\le \frac{\pi}{4}.
+\end{array}
+\]
+\eej
+
+\bej
+Probar la fórmula de integración por partes: Si \(D\subset \R^2\) es un dominio elemental, \(\partial D\) su frontera orientada en sentido antihorario y \({\bf n}=(n_1,n_2)\) la normal exterior a \(D\), entonces
+\[
+\int_D u\,v_x\,dx\,dy = -\int_D u_x\,v\,dx\,dy + \int_{\partial D} u\,v\,n_1\,ds,
+\]
+para todo par de funciones \(u,\,v\in C(\bar{D})\cap C^1(D)\).
+\eej
+
+\bej
+Sea \( C \) la curva definida por la ecuación \( x^2 + 3y^2 = 9 \), con \( x \geq 0 \), recorrida en sentido horario.  
+Calcular \( \int_C \mathbf{F} \cdot d\mathbf{s} \), siendo  
+
+\[
+\mathbf{F}(x,y) =
+\left (
+\sin(x)y - \frac{y}{x^2 + y^2},
+\frac{x}{x^2 + y^2} - \cos(x)
+\right ).
+\]
+\eej
+
+\bej
+Sea \(\C\) la curva
+\[
+\begin{aligned}
+&x=0,\quad 0\le y\le4,\\[1ex]
+&y=4,\quad 0\le x\le 4,\\[1ex]
+&y=x,\quad 0\le x\le 1,\\[1ex]
+&y=2-x,\quad 1\le x\le 2,\\[1ex]
+&y=x-2,\quad 2\le x\le 3,\\[1ex]
+&y=4-x,\quad 2\le x\le 3,\\[1ex]
+&y=x,\quad 2\le x\le 4,
+\end{aligned}
+\]
+orientada positivamente. Calcular
+\[
+\int_\C \frac{y}{(x-1)^2+y^2}\,dx+\frac{1-x}{(x-1)^2+y^2}\,dy.
+\]
+\eej
+
+\bej
+Sea \(D=\{(x,y)\,:\,1\le x^2+y^2\le4,\;x\ge0\}\). Calcular
+\[
+\int_{\partial D} x^2y\,dx-xy^2\,dy.
+\]
+Como siempre, \(\partial D\) se recorre en sentido directo (sentido contrario a las agujas del reloj).
+\eej
+
+\bej
+Calcular el trabajo efectuado por el campo de fuerzas \(F(x,y)=(y+3x,2y-x)\) al mover una partícula rodeando una vez la elipse \(4x^2+y^2=4\) en el sentido de las agujas del reloj.
+\eej
+
+\bej
+Sea \(\textbf{F}(x,y)=\big(P(x,y),Q(x,y)\big)=\left(\frac{y}{x^2+y^2},\frac{-x}{x^2+y^2}\right)\). Calcular
+\[
+\int_\C \textbf{F}\cdot d\textbf{s},
+\]
+donde \(\C\) es la circunferencia unitaria centrada en el origen orientada positivamente.
+Calcular \(Q_x-P_y\). ¿Se satisface en este caso el Teorema de Green?
+\eej
+
+\bej
+Calcular
+\[
+\int_{\mathcal{C}} f_1\,dx + f_2\,dy,
+\]
+siendo
+\[
+f_1(x,y)=\frac{ x\,\sin\left(\frac{\pi}{2(x^2+y^2)}\right)-y(x^2+y^2)}{(x^2+y^2)^2},\quad
+f_2(x,y)=\frac{ y\,\sin\left(\frac{\pi}{2(x^2+y^2)}\right)+x(x^2+y^2)}{(x^2+y^2)^2},
+\]
+y
+\[
+\mathcal{C}=\begin{cases}
+y=x+1, & \textrm{si } -1\le x \le 0,\\[1ex]
+y=1-x, & \textrm{si } 0\le x \le 1,
+\end{cases}
+\]
+recorrida desde \((-1,0)\) hasta \((1,0)\).
+\eej
+
+\bej
+Determinar todas las circunferencias \(\C\) en el plano \(\R^2\) sobre las cuales vale la siguiente igualdad
+\[
+\int_\C -y^2 \, dx + 3x \, dy = 6\pi.
+\]
+\eej
+
+\bej
+Calcular la integral
+\[
+\int_\C \textbf{F}\cdot d\textbf{s},
+\]
+donde
+\[
+\textbf{F}(x,y)=(y^2e^x+\cos x+(x-y)^2,\;2ye^x+\sen y),
+\]
+y \(\C\) es la curva
+\[
+x^2+y^2=1,\quad y\ge 0,
+\]
+orientada de manera que comience en \((1,0)\) y termine en \((-1,0)\).
+\eej
+
+\bej
+Sean \(u,\,v \in C^{1}(D)\), donde
+\[
+D=\left\{(x,y)\in \R^2 : \frac{x^2}{9}+\frac{y^2}{4} \leq1\right\}.
+\]
+Consideremos los campos definidos por
+\[
+\textbf{F}(x,y)=(u(x,y),v(x,y)),\quad \textbf{G}(x,y)=(v_{x} -v_{y},\,u_{x} -u_{y}).
+\]
+Calcular
+\[
+\iint\limits_{D} (\textbf{F} \cdot \textbf{G})(x,y) \,dx\,dy,
+\]
+sabiendo que sobre el borde de \(D\) se tiene \(u(x,y)=x\) y \(v(x,y)=1\).
+\eej
+
+\bej
+Probar el teorema de la divergencia para el plano: Si $D \subseteq \mathbb{R}^2$ es un dominio elemental, $\partial D$ su frontera orientada y $\textbf{n}$ su normal exterior, entonces:
+\begin{equation*}
+    \int\int_{D} \operatorname{Div}(F)dxdy = \int_{\partial D} F \cdot \textbf{n} \ dS,
+\end{equation*}
+para todo campo $F:\mathbb{R}^2\rightarrow \mathbb{R}^2$ de clase $C^1$.  
+\eej
+
+\end{document}

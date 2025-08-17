@@ -1,0 +1,247 @@
+\documentclass[11pt]{article}
+%\documentstyle{report}
+
+% \usepackage[psamsfonts]{amssymb}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,latexsym}
+\usepackage{graphicx}
+\usepackage{t1enc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[english]{babel}
+\usepackage{epsfig}
+\usepackage{amscd}
+\usepackage{verbatim}
+\usepackage[active]{srcltx}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+%\usepackage[english]{babel}
+\usepackage{multicol}
+
+\textheight = 23.5cm \textwidth = 15.5cm \topmargin =-.9cm
+\oddsidemargin=0cm
+
+\newtheorem{ej}{Ejercicio}%[section] %numera os 'Ejercicios' reseteando
+%en cada 'capítulo'.
+
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+
+\newcommand{\erre}{\mbox{${\bf R}\ $}}
+\newcommand{\rdos}{\mbox{${\bf R}^{2}\ $}}
+\newcommand{\rtres}{\mbox{${\bf R}^{3}\ $ }}
+\newcommand{\rene}{\mbox{${\bf R}^{n}\ $}}
+
+\newcommand{\ii}{\'{\i}}
+\newcommand{\flecha}{\mbox{$\rightarrow$}}
+
+\newcommand{\cuno}{\mbox{${\bf C}^{1}\ $}}
+\newcommand{\cdos}{\mbox{${\bf C}^{2}\ $}}
+
+\newcommand{\intab}{\int_{a}^{b}}
+\newcommand{\intsgma}{\mbox{$\int_{\sigma}$}}
+
+\newcommand{\sgm}{\mbox{$\sigma \ $}}
+\newcommand{\sgmt}{\mbox{$\sigma$(t)\ }}
+\newcommand{\sgmpt}{\mbox{$\sigma '$(t)\ }}
+\newcommand{\sen}{\mbox{sen\,}}
+\newcommand{\di}{\displaystyle}
+
+\newcommand{\bej}[1]{\begin{ej}\rm{#1}}
+\newcommand{\eej}{\end{ej}\vspace{-0.2cm}}
+
+\hyphenation{lon-gi-tud} \hyphenation{tra-yec-to-ria}
+\hyphenation{ve-ri-fi-que ve-ri-fi-car ve-ri-fi-ca-do}
+\hyphenation{si-guien-te si-guien-tes se-guir si-guien-do
+se-gui-do} \hyphenation{e-cua-cio-nes} \hyphenation{su-po-ner
+su-pon-ga-mos su-pon-ga su-pu-sie-ra}
+
+%\includeonly{a2p567t}
+%\includeonly{a2p5}
+
+\begin{document}
+
+%\include{a2p567t}
+%\include{a2p5}
+%\include{a2p6}
+%\include{a2p7}
+
+\begin{center}
+
+\bf{\Large An\'alisis II -- An\'alisis matem\'atico II -- Matem\'atica 3.} \\
+\bigskip
+\bf{\large Segundo Cuatrimestre de 2025}\\
+\bigskip
+\bf{Pr\'actica 6 - Ecuaciones de 2do. orden y sistemas de 1er. orden.}
+\end{center}
+
+\bigskip
+
+\setcounter{equation}{0}
+
+
+
+\bej  Encontrar un sistema fundamental de soluciones reales de las siguientes
+ecuaciones:
+\[
+\begin{array}{ll}
+\mbox{i)}&y''-8y'+16y=0\\
+\mbox{ii)}&y''-2y'+10y=0\\
+\mbox{iii)}&y''-y'-2y=0
+\end{array}
+\]
+
+ En cada uno de los casos anteriores encontrar una soluci\'on exacta
+de la ecuaci\'on no homog\'enea correspondiente con t\'ermino
+independiente $x, e^x,1 \mbox{ y } e^{-x}$.
+
+\eej
+
+\bej Sean $(a_{1},b_{1})$ y $(a_{2},b_{2})$ dos puntos del plano tales que
+$\frac{a_{1}-a_{2}}{\pi}$ no es un n\'umero entero.
+\begin{enumerate}
+\item Probar que existe exactamente una soluci\'on de la ecuaci\'on
+diferencial $y''+y=0$ cuya gr\'afica pasa por esos puntos.
+
+\item ?`Se cumple en alg\'un caso la parte (a) si $a_{1}-a_{2}$ es un m\'ultiplo
+entero de $\pi$?
+
+\item Generalizar el resultado de (a) para la ecuaci\'on $y''+k^{2}y=0$. Discutir
+tambi\'en el caso $k=0$.
+\end{enumerate}
+\eej
+
+\bej Hallar todas las soluciones de $y''-y'-2y=0$ y de $y''-y'-2y= e^{-x}$
+que verifiquen:
+\[
+\begin{array}{llllll}
+\mbox{i)} &y(0)=0,\ &y'(0)=1\qquad\quad&\mbox{ii)}&y(0)=1,\ \ \ y'(0)=0\\
+\mbox{iii)}&y(0)=0,&y'(0)=0&\mbox{iv)}&\lim_{x \rightarrow +\infty} y(x)=0&\\
+\mbox{v)}&y(0)=1&&\mbox{vi)}&y'(0)=1&
+\end{array}
+\]
+\eej
+
+\bej En el interior de la Tierra, la fuerza de gravedad es
+proporcional a la distancia al centro. Si se perfora un orificio
+que atraviese la Tierra pasando por el centro, y se deja caer
+una piedra en el orificio, ?`con qu\'e velocidad llegar\'a al centro?.
+\eej
+
+\bej La ecuaci\'on $x^{2}y''+pxy'+qy=0$ ($p,q$ constantes) se denomina
+ecuaci\'on de Euler.
+
+\begin{enumerate}
+\item Demuestre que el cambio de variables $x= \mbox{e}^{t}$ transforma la
+ecuaci\'on en una con coeficientes constantes.
+
+\item Aplique (a) para resolver en $\erre_{>0}$ las ecuaciones:
+\[
+\begin{array}{ll}
+\mbox{i)}&x^{2}y''+2xy'-6y=0\\
+\mbox{ii)}&x^{2}y''-xy'+y=2x
+\end{array}
+\]
+\end{enumerate}
+\eej
+
+
+\bej Hallar la soluci\'on general de las siguientes ecuaciones, empleando la
+soluci\'on dada:
+\[
+\begin{array}{llll}
+\mbox{i)}&xy''+2y'+xy=0, & I=\erre_{>0}, & y_{1}(x)=\frac{\mbox{sen}x}{x}.\\
+\mbox{ii)}&xy''-y'-4x^{3}y=0, & I=\erre_{>0}, & y_{1}(x)=\exp (x^{2}).\\
+\mbox{iii)}&xy''-y'-4x^{3}y=0, & I=\erre_{<0}, & y_{1}(x)=\exp (x^{2}).\\
+\mbox{iv)}&(1-x^{2})y''-2xy'+2y=0, & I=(-\infty,-1), (-1,1), (1, \infty), 
+& y_{1}(x)=x.
+\end{array}
+\]
+El último ítem es un caso especial de la ecuaci\'on $(1-x^{2})y''
+-2xy'+p(p+1)y=0$ (ecuaci\'on de Legendre), correspondiente al caso $p=1$,
+ en los intevalos en que la
+ecuaci\'on es normal.
+\eej
+
+\bej Sabiendo que $y_{1}(x)=e^{x^2}$ es
+soluci\'on de la ecuaci\'on homog\'enea asociada, hallar todas las
+soluciones de $xy''-y'-4x^3y=x^3$.
+
+\eej
+
+\bej Probar que las funciones
+\[
+\begin{array}{cc}
+\begin{array}{ll}
+\phi _{1}(t)= &\left\{ \begin{array}{ll}
+t^{2}&t \le 0\\
+0&t\geq 0
+\end{array}
+\right.
+\end{array}
+&
+\begin{array}{ll}
+\quad \text{ y }\quad \phi _{2}(t)= &\left\{ \begin{array}{ll}
+0&t \le 0\\
+t^{2}&t\geq 0
+\end{array}
+\right.
+\end{array}
+\end{array}
+\]
+son linealmente independientes en \erre pero que $W(\phi_{1}, \phi_{2})(0)=0$.
+?`Existe alg\'un sistema lineal normal de orden 2 definido en alg\'un intervalo
+$(-\epsilon, \epsilon)$ que admita a $\{ \phi_{1}, \phi_{2}\}$ como base de
+soluciones?
+\eej
+
+
+\bej Hallar la soluci\'on general de los siguientes sistemas
+$$
+\hskip-.2cm\text{(a)}\: \left\{\ba{l} x_1'=-x_2 \\x_2'=2x_1+3x_2 \ea \right.\qquad\qquad\qquad
+\hskip.3cm\text{(b)}\: \left\{\ba{l} x_1'=-8x_1-5x_2\\x_2'=10x_1+7x_2\ea\right.
+$$
+$$
+\hskip1cm\text{(c)}\: \left\{\ba{l}  x_1'=-4x_1+3x_2 \\x_2'=-2x_1+x_2\ea\right.\qquad\hskip1.5cm
+\text{(d)}\:\left\{\ba{l} x_1'=-x_1+3x_2-3x_3\\   x_2'=-2x_1+x_2\\ x_3'=-2x_1+3x_2-2x_3
+\ea\right.
+$$
+
+En cada caso, hallar el conjunto de datos iniciales tales que la
+soluci\'on correspondiente tienda a 0 cuando $t$ tienda a
+$+\infty$. Ídem con $t$ tendiendo a $-\infty$.
+
+\eej
+
+\bej Dos tanques, conectados mediante tubos, contienen cada uno 24 litros de una soluci\'on salina. Al tanque I entra agua pura a raz\'on de 6 litros por minuto y del tanque II sale, al exterior, el agua que contiene a raz\'on de 6 litros por minuto. Adem\'as el l\'iquido se bombea del tanque I al tanque II a
+una velocidad de 8 litros por minuto y del tanque II al tanque I a una
+velocidad de 2 litros por minuto. Se supone que los tanques se agitan de igual forma constantemente de manera tal que la mezcla sea homog\'enea. Si en un principio hay $x_0$ kg de sal en el tanque I e $y_0$ Kg de sal en el tanque II, determinar la cantidad de sal en cada tanque a tiempo $t>0$. Cu\'al es el l\'imite, cuando $t\to +\infty$, de las respectivas concentraciones de sal en cada tanque.?
+\eej
+
+%\bej Inicialmente el tanque I contiene 100 litros de agua salada a una
+%concentraci\'on de 1 kg por litro y el tanque II tiene 100 litros
+%de agua pura. El l\ii quido se bombea del tanque I al tanque II a
+%una velocidad de 1 litro por minuto, y del tanque II al I a una
+%velocidad de 2 litros por minuto. Los tanques se agitan
+%constantemente. \textquestiondown Cu\'al es la concentraci\'on en el tanque I
+%despu\'es de 10 minutos?
+%\eej
+
+\bej Hallar la soluci\'on general de los siguientes sistemas
+
+$$\text{(a)}\; \left\{\ba{l}x_1'=x_1-x_2\\ x_2'=x_1+x_2  \ea \right. \qquad
+\ \ \text{(b)}\; \left\{\ba{l}x_1'=2x_1-x_2\\ x_2'=4x_1+2x_2  \ea \right. \qquad
+$$
+$$\ \ \ \text{(c)}\; \left\{\ba{l}x_1'=2x_1+x_2   \\ x_2'=2x_2    \ea \right. \qquad
+\text{(d)}\; \left\{\ba{l}x_1'=-5x_1+9x_2\\ x_2'=-4x_1+7x_2  \ea \right. \qquad
+$$
+
+\eej
+
+\bej Hallar la soluci\'on general de los siguientes sistemas
+$$
+\text{(a)}\: \left\{\ba{l}x_1'=-x_2+2\\ x_2'=2x_1+3x_2+t \ea\right.\qquad
+\text{(b)} \:\left\{\ba{l} x_1'=2x_1-x_2+e^{2t}\\ x_2'=4x_1+2x_2+4 \ea\right.
+$$
+\eej
+
+\end{document}

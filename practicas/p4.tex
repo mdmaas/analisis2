@@ -1,0 +1,520 @@
+\documentclass[11pt,a4paper,pdftex]{amsart}
+
+\usepackage[psamsfonts]{amssymb}
+%\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,latexsym}
+\usepackage{graphicx}
+\usepackage{t1enc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[english]{babel}
+\usepackage{epsfig}
+\usepackage{amscd}
+\usepackage{verbatim}
+\usepackage[active]{srcltx}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+%\usepackage[english]{babel}
+\usepackage{multicol}
+
+
+\newtheorem{teo}{Teorema}[section]%establece un contador para
+%el entorno 'teo' que aparecerá con el nombre 'Teorema' y que
+%volverá a empezar cuando cambien de 'chapter'.
+
+\newtheorem{coro}[teo]{Corolario}%vincula las numeraciones de 'coro'
+%con las de 'teo'.
+
+\newtheorem{lema}{Lema}[section]
+%\newtheorem{lema}[lema]{Lema}
+
+
+\newtheorem{definition}{Definici\'on}[section]
+
+\newtheorem{conc}{Conclusión}[section]
+
+\newtheorem{prop}{Proposición}[section]
+%\newtheorem{prop}[prop]{Propiedad}
+
+\newtheorem{obs}{Observación}[section]
+
+\renewcommand{\thesection}{{}}
+
+%\newtheorem{obs}{Observación} %numera las 'Observaciones' de corrido
+%sin volver a resetear.
+
+\newtheorem{ax}{Axioma}[section]
+
+%\newtheorem{defini}{Definición}[section]
+
+\newtheorem{ej}{Ejercicio}%[section] %numera os 'Ejercicios' reseteando
+%en cada 'capítulo'.
+
+
+%\numberwithin{equation}{section}%numera las formulas reseteando
+%cada vez que cambia de 'capítulo'.
+
+% proof
+%\newenvironment{proof}
+% {\medskip\noindent {\sc Demostración}.-- \ }
+% {\hfill\vbox{\hrule height 5pt width 5pt } \bigskip}
+
+%\newcommand{\cqfd}{\hfill\vbox{\hrule height 5pt width 5pt }\bigskip}
+
+
+\newcommand{\bl}{\begin{lema}}
+\newcommand{\el}{\end{lema}}
+\newcommand{\bcon}{\begin{conc}}
+\newcommand{\econ}{\end{conc}}
+\newcommand{\bteo}{\begin{teo}}
+\newcommand{\eteo}{\end{teo}}
+\newcommand{\bp}{\begin{prop}}
+%\newcommand{\ep}{\end{prop}}
+\newcommand{\bo}{\begin{obs}}
+\newcommand{\eo}{\end{obs}}
+\newcommand{\bco}{\begin{coro}}
+\newcommand{\eco}{\end{coro}}
+\newcommand{\bpf}{\begin{proof}}
+\newcommand{\epf}{\end{proof}}
+\newcommand{\bax}{\begin{ax}}
+\newcommand{\eax}{\end{ax}}
+\newcommand{\bdefi}{\begin{defini}}
+\newcommand{\edefi}{\end{defini}}
+\newcommand{\bej}[1]{\begin{ej}\rm{#1}}
+\newcommand{\eej}{\end{ej}\vspace{-0.2cm}}
+
+%---------------------------------------
+
+%comandos
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\bq}{\begin{quotation}}
+\newcommand{\eq}{\end{quotation}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mb}[1]{\;\mbox{#1}\;}
+\newcommand{\su}[1]{\underline{#1}}
+\newcommand{\so}[1]{\overline{#1}}
+\newcommand{\ang}[1]{\widehat{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\cc}{QQ\;}
+\renewcommand{\bf}{\textbf}
+\newcommand{\comb}[2]{\left(\!\!\!\ba{c}#1\\[1ex]#2 \ea
+\!\!\!\right)}
+%-----------------------------------------
+
+%conjuntos
+\newcommand{\W}{\mathbb W}
+\newcommand{\K}{\mathbb K}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{{\mathcal C}}
+\newcommand{\Su}{{\mathcal S}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\F}{\mathbb F}
+\newcommand{\A}{\mathbb A}
+\newcommand{\V}{\mathbb V}
+\newcommand{\I}{\mathbb I}
+\newcommand{\0}{\mathbb O}
+
+%------------------------------------------
+%operaciones
+\newcommand{\8}{\infty}
+\newcommand{\ie}{\langle}
+\newcommand{\de}{\rangle}
+\newcommand{\pe}[2]{\ie {#1} \, ; \, {#2} \de }
+\newcommand{\f}[1]{\overrightarrow{#1}}
+\newcommand{\DT}[2]{\frac{d{#1}}{d{#2}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dg}{\Delta}
+\newcommand{\g}{\nabla}
+\newcommand{\D}{\mbox{div}}
+\newcommand{\Dp}[1]{\partial_{#1}}
+\newcommand{\DP}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\sen}[1]{\mbox{sen}\;{#1}}
+\newcommand{\Lp}[1]{L^{#1}}
+\newcommand{\To}{\longrightarrow}
+%-------------------------------------
+%griegos
+\newcommand{\vi}{\varphi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\ve}{\varepsilon}
+
+
+
+%-------------------------
+
+%comandos particulares
+
+\newcommand{\id}[1]{\text{id}_{#1}}
+\newcommand{\mD}{\mc{D}}
+\newcommand{\mC}{\mc{S}}
+\newcommand{\mS}{\mc{SS}}
+\newcommand{\mH}{\mc{H}}
+\newcommand{\HD}{\mc{H}_\mD}
+
+\newcommand{\ep}{\varepsilon}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Un comando para insertar dibujos
+% \newcommand{\putfig}[4]{\bigskip \bigskip
+%              \begin{figure}[ht]
+%              \epsfxsize=#1cm\hfil{\epsfbox{#2}}
+%              \caption{#3}
+%          \label{#4}
+%              \end{figure}\bigskip}
+
+%La sintaxis
+%\putfig{ancho}{.eps}{titulo}{label}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Un comando para insertar dos dibujos
+\newcommand{\putfigg}[4]{\bigskip \bigskip
+             \begin{figure}[ht]
+             \epsfxsize=5cm\hfil{\epsfbox{#1}}
+             \epsfxsize=5cm\hfil{\epsfbox{#2}}
+             \caption{#3}
+         \label{#4}
+             \end{figure}\bigskip}
+%La sintaxis
+%\putfigg{.eps}{.eps}{titulo1}{label1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%un dibujo en jpg
+
+% \newcommand{\putjpg}[3]{\bigskip
+% \begin{center}
+%  \begin{figure}[ht]
+%   \hspace{5cm}\includegraphics[scale=1.7]{#1.jpg}
+%   \caption{#2}
+%   \label{#3}
+%   \bigskip
+%   \bigskip
+%  \end{figure}
+% \end{center}
+% }
+
+%la sintaxis \putjpg{.jpg}{Titulo}{label}
+
+
+%----------------------------------------------------
+%diseño de la página
+
+\vfuzz7pt % Don't report over-full v-boxes if over-edge is 7pt small
+\hfuzz7pt % Don't report over-full h-boxes if over-edge is 7pt small
+
+\pagestyle{myheadings}
+%\pagestyle{empty}: elimina números de página y encabezados
+
+%\flushbottom \textwidth17cm \textheight23cm \hoffset=-2cm
+%\voffset=-0.5cm
+
+\flushbottom \textwidth17cm \textheight25cm \hoffset=-2cm
+\voffset=-2cm
+
+\begin{document}
+
+
+
+%\markboth{}{\hfil {\sc An\'alisis II--An\'alisis matem\'atico II--Matem\'atica 3. 1er. Cuatrimestre 2008}}
+
+\begin{center}
+
+\bf{\Large An\'alisis II -- An\'alisis matem\'atico II -- Matem\'atica 3.} \\
+\bigskip
+\bf{\large Segundo Cuatrimestre de 2025}\\
+\bigskip
+\bf{Pr\'actica 4 - Teoremas de Stokes y de Gauss. Campos conservativos. Aplicaciones.}
+\end{center}
+
+\bigskip\bigskip
+
+\setcounter{equation}{0}
+
+\bej  Verificar el teorema de Stokes para el hemisferio superior $z=\sqrt{%
+1-x^2-y^2}$,\ $z\ge 0$, y el campo vectorial  ${\bf F}(x,y,z)=(x,y,z)$.
+\eej
+
+\bej  Sea $S$ la superficie cil\'{\i }ndrica con tapa, que es uni\'{o}n de
+dos superficies $S_1$ y $S_2$, donde $S_1$ es el conjunto de $(x,y,z)$ con $%
+x^2+y^2=1$, \ $0\le z\le 1$ y $S_2$ es el conjunto de $(x,y,z)$ con $%
+x^2+y^2+(z-1)^2=1$,\ $z\geq 1$, orientadas con la normal que apunta hacia afuera
+del cilindro y de la esfera, respectivamente. Sea ${\bf F}%
+(x,y,z)=(zx+z^2y+x,z^3yx+y,z^4x^2)$. Calcular $\int_S(\nabla \times {\bf F}%
+)\cdot \,d{\bf S}.$
+\eej
+
+\bej\ \
+
+\begin{enumerate}
+\item[a).]  Considerar dos superficies $S_1$ y $S_2$ con la misma frontera $%
+\partial S$. Describir, mediante dibujos, como deben orientarse $S_1$ y $S_2$
+para asegurar que
+\[
+\int_{S_1}(\nabla \times {\bf F})\cdot \,d{\bf S}=\int_{S_2}(\nabla \times
+{\bf F})\cdot \,d{\bf S}
+\]
+
+\item[b).]  Deducir que si $S$ es una superficie cerrada, entonces
+\[
+\int_S(\nabla \times {\bf F})\cdot \,d{\bf S}=0
+\]
+(una superficie cerrada es aquella que constituye la frontera de una
+regi\'{o}n en el espacio; as\'{\i }, por ejemplo, una esfera es una
+superficie cerrada).
+
+\item[c).]  Calcular $\int_S(\nabla \times {\bf F})\cdot \,d{\bf S}$, donde $S$
+es el elipsoide $x^2+y^2+2z^2=10$, y ${\bf F}=(\sin xy,e^x,-yz)$.
+\end{enumerate}
+\eej
+
+%\bej  Verificar el teorema de Stokes para la helicoide parametrizada por
+%$\Phi (r,\theta
+%)=(r\cos \theta ,r\sin \theta ,\theta ),$ $(r,\theta )\in [0,1]\times [0,\pi
+%/2]$ y el campo vectorial ${\bf F}(x,y,z)=(z,x,y)$
+%\eej
+
+\bej  Estudiar la aplicabilidad del teorema de Stokes al campo ${\bf F}%
+=(-\frac y{x^2+y^2},\frac x{x^2+y^2},0)$ y la superficie $S$, en cada uno de los siguientes casos:
+
+\begin{enumerate}
+\item[a).]  $S=$ c\'{\i }rculo de radio $a>0$ centrado en el origen en el plano $z=0$.
+
+\item[b).]  $S=$ regi\'{o}n del plano $z=0$ entre $x^2+y^2=1$ y $x+y=1$.
+\end{enumerate}
+\eej
+
+
+\bej  Evaluar $\int_\C{\bf F}\cdot \,d{\bf s}$, donde
+
+\begin{enumerate}
+\item[a).]  ${\bf F}=(2xyz+\mbox{sen\,} x,x^2z,x^2y)$, y $\C$ es la curva que est\'{a}
+parametrizada por $({\cos }^5t,{\mbox{sen\,} }^3t,t^4)$, $0\le t\le \pi $.
+
+\item[b).]  ${\bf F}=(\cos xy^2-xy^2\,\mbox{sen\,} xy^2,-2x^2y\,\mbox{sen\,} xy^2,0)$, y $\C$ es
+la curva parametrizada
+por $(e^t,e^{t+1},0)$, $-1\le t\le 0$.
+\end{enumerate}
+\eej
+
+\bej Calcular
+$$
+\int_\C \big(y+\sen x\big)\,dx+\Big(\frac32 z^2+\cos y\Big)\,dy+2x^3\,dz,
+$$
+donde $\C$ es la curva orientada parametrizada por $\sigma(t)=\big(\sen t,\cos t,\sen 2t\big)$,
+$0\le t\le 2\pi$.
+
+Sugerencia: Observar que $\C$ se encuentra en la superficie $z=2xy$.
+\eej
+
+
+
+\bej Sea $f\in C^1(B)$ donde $B$ es una bola en $\R^3$. Deducir que si $\nabla f=0$
+en $B$ se sigue que $f$ es constante en $B$.
+\eej
+
+\bej Calcular la integral de
+línea $\int_{\mc C}\,\textbf{F}\cdot d\textbf{s}$ donde $\textbf{F}$ es el campo vectorial
+definido por: 
+$$
+\textbf{F}(x,y,z)=(2xy+z^2,x^2-2yz,2xz-y^2)
+$$
+y ${\mc C}$ es la curva que está contenida en la esfera $x^2+y^2+z^2=1$ 
+y el plano de ecuación $y=x$ recorrida desde el punto $\left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0 \right)$ 
+al polo norte.
+\eej
+
+
+
+\bej Rehacer el ejercicio 16) de la Pr\'{a}ctica 2, usando el
+Teorema de Gauss.
+\eej
+
+\bej  Calcular $\int_S(x+y+z)\,dS$ donde $S$ es el borde de la bola unitaria,
+es decir
+\[
+S=\{(x,y,z)/x^2+y^2+z^2=1\}
+\]
+\eej
+
+
+%\bej  Verificar el Teorema de la divergencia para ${\bf F}=(x,y,z)$ y $%
+%\Omega $ el s\'{o}lido intersecci\'{o}n de $x^2+y^2\le 1$ y $x^2+y^2+z^2\le 4
+%$.
+%\eej
+
+
+\bej  Calcular $\int_S{\bf F}\cdot \,d{\bf S}$, siendo ${\bf F}%
+=(x^3,y^3,z^3)$ y $S$ la  esfera de radio $R$ con la normal que apunta hacia adentro.
+
+\eej
+
+\bej Sea $\C$ la curva en el plano $xz$ dada en polares por:
+\[
+r(\varphi )=\frac{4\sqrt{3}}9\left( 2-\cos (2\varphi )\right) \quad \,\text{%
+para\ }\frac \pi 6\leq \varphi \leq \frac{5\pi }6,
+\]
+donde $\varphi \,$ es el \'{a}ngulo que forma el radio vector con el
+semieje positivo de las $z$. Sea $S$ la superficie que se obtiene por
+\textbf{revoluci\'{o}n} de esta curva alrededor del eje $z$.
+
+\putfigg{dibujo1.eps}{dibujo2.eps}{}{}
+
+En el primer dibujo se muestra la superficie $S,\,$en el segundo se
+realiz\'{o} un corte de la misma para que se aprecie mejor su forma.
+
+Calcular el \textbf{flujo} a trav\'{e}s de $S$ en el sentido
+``externo'' del campo
+\[
+F(x,y,z)=(x,y,-2z).
+\]
+\eej
+
+%\bej  Rehacer el ejercicio \ref{2}) de esta pr\'{a}ctica usando el Teorema
+%de Gauss.
+%\eej
+
+
+
+\bej  Calcular el flujo del campo $F(x,y,z)=(0,0,a^2-x^2-y^2)$ a trav\'{e}s
+de las siguientes {\bf secciones oblicuas} del cilindro $x^2+y^2\le a^2:$
+
+\begin{enumerate}
+\item[a).]  {\bf Secci\'{o}n oblicua} determinada por la intersecci\'{o}n del
+cilindro con el plano de ecuaci\'{o}n $y+z=1,$ de modo que la normal en el
+punto $(0,0,1)$ apunte en la direcci\'{o}n $(0,1,1).\medskip $
+
+\item[b).]  {\bf Secci\'{o}n oblicua} determinada por la intersecci\'{o}n del
+cilindro con el plano de ecuaci\'{o}n $z=0,$ de modo que la normal en el
+punto $(0,0,0)$ apunte en la direcci\'{o}n $(0,0,1).\medskip $
+\end{enumerate}
+
+\textquestiondown Depende el flujo del \'{a}rea de la secci\'{o}n?. {\bf %
+Justifique.}
+\eej
+
+\bej Dada la funci\'{o}n $f\left(  x\right)  =\frac{1}%
+{2}xe^{2-2x}$ podemos describir  la superficie de la
+calabaza de un mate como la superficie de rotación alrededor del eje $z$ de la curva
+$x=f(z)$, $0\le z\le 1$.
+
+Para una idea gr\'{a}fica ver la figura.
+
+\putfigg{dibujo5.eps}{dibujo4.eps}{}{}
+
+Cuando el mate se encuetra cargado de yerba y de agua caliente, el calor es un campo
+dado por
+\[
+F\left(  x,y,z\right)  =\left(  x,y,z-\frac{1}{2}\right)
+\]
+Calcular el flujo t\'{e}rmico saliente que atraviesa la superficie de la calabaza del mate.
+\eej
+
+\bej Sea $\mc S$ la superficie dada por el gráfico de la función
+$f(x,y)=\dfrac{1}{1+x^2+y^2}$\, con 
+\\ $\|(x,y)\|\leq 1$ y sea
+$\textbf{F}(x,y,z)=\Big(\dfrac{zx}{x^2+y^2},\dfrac{zy}{x^2+y^2},0\Big).$ Hallar
+$$\iint_{\mc S}\,\textbf{F}\cdot d\textbf{S}.$$
+
+{\em Piense antes de actuar}.
+\eej
+
+\bej Se sabe que $\mbox{div\,}\textbf{rot\,G}=0$ para todo campo vectorial
+$\textbf{G}\in C^1$. Además, si $\textbf{F}\in C^1(\R^3)$ es tal que $\mbox{div\,}\textbf{F}=0$
+en $\R^3$, existe $\textbf{G}\in C^2(\R^3)$ tal que $\textbf{F}=\textbf{rot\,G}$.
+Por ejemplo, tomar
+$$
+\begin{aligned}
+&G_1(x,y,z)=\int_0^zF_2(x,y,t)\,dt-\int_0^yF_3(x,t,0)\,dt,\\
+&G_2(x,y,z)=-\int_0^zF_1(x,y,t)\,dt,\\
+&G_3(x,y,z)=0.
+\end{aligned}
+$$
+
+Considerar el campo gravitatorio $\textbf{F}=-GmM\frac{\textbf{r}}{r^3}$.
+Verificar que $\mbox{div\,} \textbf{F}=0$. \textquestiondown Existe un campo
+$\textbf{G}\in C^2(\R^3\setminus\{0\})$ tal que $\textbf{F}=\textbf{rot\,G}$?
+
+\medskip
+
+Sugerencia: Ver Ejercicio 12.
+\eej
+
+
+\bej \textquestiondown Es cada uno de los siguientes campos vectoriales el rotor de
+algún otro campo vectorial? De ser así, hallar el campo vectorial.
+\begin{enumerate}
+\item[a).] $\textbf{F}=(x,y,z)$.
+\item[b).] $\textbf{F}=(x^2+1, x-2xy,y)$.
+\end{enumerate}
+\eej
+
+\bej Para cada $R>0$ sea $S_R=\big\{(x,y,z)\,/\,x^2+y^2+z^2=R^2\,,\,z\ge0\big\}$ orientada con la
+normal que apunta hacia arriba, y sea el campo
+$$
+\textbf{F}(x,y,z)=\big(xz-x\cos z,-yz+y\cos z, 4-x^2-y^2\big).
+$$
+Determinar $R$ de modo que el flujo del campo $\textbf{F}$ a través de $S_R$ sea máximo.
+\eej
+
+
+
+
+%
+%\bej Sea $\textbf{V}=\big(\frac{-y}{\sqrt{x^2+y^2}},\frac{x}{\sqrt{x^2+y^2}},0\big)$ el campo de velocidades de un fluido. Encontrar los puntos
+%alrededor de los cuales la circulación es máxima.
+%\eej
+
+\bej Usando el teorema de Gauss, probar las {\it Identidades de Green}:
+\[
+\int_{\partial \Omega }f\nabla g\cdot {\bf n}\,dS=\int_\Omega (f\Delta
+g+\nabla f\cdot \nabla g)\,dx\,dy\,dz,
+\]
+\[
+\int_{\partial \Omega }(f\nabla g-g\nabla f)\cdot {\bf n}\,dS=\int_\Omega
+(f\Delta g-g\Delta f)\,dx\,dy\,dz.
+\]
+
+Aqu\'{\i }{\ }${\bf n}$ es la normal exterior al dominio $\Omega \subset
+\R^3$,  $f,g$ son de clase $C^2({\Omega})\cap C^1(\overline{\Omega})$ y, para 
+una función $u\in C^2(\Omega)$, $\Delta u=u_{xx}+u_{yy}+u_{zz}$.
+\eej
+
+\bej Decimos que $\lambda\in\R$ es un autovalor del operador $\Delta$ definido en el
+Ejercicio 25 en $\Omega$ si existe una función $f\in C^2(\Omega)\cap C^1(\overline{\Omega})$
+con $f=0$ en $\partial \Omega$, $f\not\equiv0$ tal que $\Delta f=\lambda f$ en
+$\Omega$. En ese caso decimos que $f$ es una autofunción asociada a $\lambda$.
+
+ Utilizando las identidades de Green del Ejercicio 25, mostrar que si $\lambda\neq\mu$ son
+autovalores de $\Delta$ en $\Omega$ y $f$ y $g$ son autofunciones asociadas
+a $\lambda$ y $\mu$ respectivamente se tiene
+$$\iiint_\Omega f\,g\,dV=0
+$$
+\eej
+
+\bej Sea $B$ una bola en $\mathbb{R}^3$. Ver que no puede haber una función $f\not\equiv0$, $f\in C^2(B)\cap C^1(\overline{B})$
+que satisfaga
+$$
+\Delta f=0\quad\mbox{en }B,\qquad f=0\quad\mbox{en }\partial B.
+$$
+
+\medskip
+
+Sugerencia: Utilizar las identidades de Green del Ejercicio 25 para deducir que $\nabla f=0$ en $B$.
+A continuación utilizar el Ejercicio 9 para deducir que $f$ es constante.
+\eej
+
+
+\end{document}
+
